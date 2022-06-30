@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Person\IndexController;
+use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,5 +23,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// '/{page}' - просто отключаем вызов из backend
-Route::get('/{page}', [IndexController::class, '__invoke'])->where('page', '.*');
+Route::get('/', [IndexController::class, '__invoke']);
+Route::get('/persons', [PersonController::class, '__invoke']);
