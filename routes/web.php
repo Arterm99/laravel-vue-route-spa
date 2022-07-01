@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Person\IndexController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +23,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', [IndexController::class, '__invoke']);
+Route::get('/{people}', [IndexController::class, '__invoke'])->where('people', '.*');
 Route::get('/persons', [PersonController::class, '__invoke']);

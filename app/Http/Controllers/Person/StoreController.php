@@ -13,8 +13,9 @@ class StoreController extends Controller
     {
         $data = $request->validated();
 
-        $persone = Person::create($data);
+        Person::create($data);
 
-        return $persone;
+        // После удаления возвращаем метод response([]) с пустым массивом внутри
+        return response([]);
     }
 }

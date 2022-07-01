@@ -12,7 +12,7 @@ class DeleteController extends Controller
     {
         $person->delete();
 
-        // После удаления возвращаем метод response([])
+        // После удаления возвращаем метод response([]) с пустым массивом внутри
         return response([]);
     }
 }

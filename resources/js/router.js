@@ -15,6 +15,25 @@ export default new VueRouter( {   // export - передает значения,
             // Третий вариант - сокращенный, стрелочная функция
             component: () => import('./components/Person/Index'),
             name: 'person.index' // нэйминг для редиректов, ссылок : название папки/название файла
+        },
+        {
+
+            path: '/people/create',
+            component: () => import('./components/Person/Create'),
+            name: 'person.create'
+        },
+
+        {
+            // :id - прокидываем id
+            path: '/people/:id/edit',
+            component: () => import('./components/Person/Edit'),
+            name: 'person.edit'
+        },
+
+        {
+            path: '/people/:id',
+            component: () => import('./components/Person/Show'),
+            name: 'person.show'
         }
     ]
 })

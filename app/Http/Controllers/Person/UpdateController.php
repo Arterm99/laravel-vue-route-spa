@@ -14,6 +14,7 @@ class UpdateController extends Controller
 
         $person->update($data);
 
-        return $person;
+        // После удаления возвращаем метод response([]) с пустым массивом внутри
+        return response([]);
     }
 }
